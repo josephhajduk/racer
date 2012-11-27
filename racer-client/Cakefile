@@ -68,9 +68,10 @@ task 'build:client', "build the html5 client", (options) ->
   console.log "Copying plain resources"
   filewalk.walkSync "resources/plain", (dirPath, dirs, files)->
     for f in files
-      exec "cp #{dirPath}/#{f} #{options.output}/#{f}"
+      exec "cp #{dirPath}/#{f} #{options.output}/#{dirPath.replace("resources/plain","")}/#{f}"
 
   # start resource.list
+  exec "echo fileexists >> #{options.output}/resources/resources.js" #UGLY HACK
   exec "echo var racer_resources_json = [ > #{options.output}/resources/resources.js"
 
   console.log "Processing complex resources"
