@@ -1,21 +1,25 @@
 fs = require 'fs'
 {exec} = require 'child_process'
 filewalk = require 'file'
+connect = require 'connect'
 
 option '-o', '--output [DIR]', 'directory for compiled code'
 option '-p', '--platform [DIR]', 'platform ("-cocoonjs")'
 
 appFiles = []
 
+jsFiles = [
+]
+
 filewalk.walkSync "coffee/", (dirPath, dirs, files) ->
   for f in files
     appFiles.push("#{dirPath}/#{f}")
 
-copyfolder = (from,to) ->
-  filewalk.walkSync from, (dirPath, dirs, files)->
-    for f in files
-      exec "mkdir -p #{to}/#{dirPath}/"
-      exec "cp #{dirPath}/#{f} #{to}/#{dirPath}/#{f}"
+task 'host', "host with node connect", (options) ->
+  console.log "starting web server"
+  connect()
+    .use(connect.static('build'))
+    .listen(8080)
 
 task 'build:clean', "clean build folder", (options) ->
   console.log "Clearing build director"
@@ -24,14 +28,13 @@ task 'build:clean', "clean build folder", (options) ->
 
 task 'build:client', "build the html5 client", (options) ->
 
-  console.log "Clearing build director"
-  exec "rm -rf build/"
-  exec "mkdir build/"
-
   console.log "Building Client into #{options.output}"
 
   console.log "Copying JS"
-  copyfolder "js/",options.output
+  filewalk.walkSync "js/", (dirPath, dirs, files)->
+    for f in files when f.indexOf(".js", this.length - ".js".length) != -1
+      exec "mkdir -p #{options.output}/#{dirPath}/"
+      exec "cp #{dirPath}/#{f} #{options.output}/#{dirPath}/#{f}"
 
   console.log "Concatenating coffeescript"
 
@@ -57,15 +60,33 @@ task 'build:client', "build the html5 client", (options) ->
           console.log 'Done.'
 
   console.log "Copying CSS"
-  copyfolder "css/",options.output
+  filewalk.walkSync "css/", (dirPath, dirs, files)->
+    for f in files when f.indexOf(".css", this.length - ".css".length) != -1
+      exec "mkdir -p #{options.output}/#{dirPath}/"
+      exec "cp #{dirPath}/#{f} #{options.output}/#{dirPath}/#{f}"
 
   console.log "Copying plain resources"
   filewalk.walkSync "resources/plain", (dirPath, dirs, files)->
     for f in files
       exec "cp #{dirPath}/#{f} #{options.output}/#{f}"
 
+  # start resource.list
+  exec "echo var racer_resources_json = [ > #{options.output}/resources/resources.js"
+
+  console.log "Processing complex resources"
+  filewalk.walkSync "resources/complex/", (dirPath, dirs, files)->
+    for f in files when f.indexOf(".coffee", this.length - ".coffee".length) != -1
+      complex = require("./#{dirPath}/#{f}")
+      complex.process(options)
+
+  exec "sed -i '$s/,$//' #{options.output}/resources/resources.js"
+
+  # end resource.list
+  exec "echo ] >> #{options.output}/resources/resources.js"
+
   console.log "Copying HTML"
   options.platform ?= ""
   fs.createReadStream("html/index#{options.platform}.html").pipe(fs.createWriteStream("#{options.output}/index.html"));
+
 
 
