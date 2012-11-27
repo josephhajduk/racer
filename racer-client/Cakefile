@@ -1,26 +1,21 @@
 fs = require 'fs'
 {exec} = require 'child_process'
 filewalk = require 'file'
-fileutils = require "file-utils"
 
 option '-o', '--output [DIR]', 'directory for compiled code'
 option '-p', '--platform [DIR]', 'platform ("-cocoonjs")'
 
-appFiles = [
-  "main"
-]
+appFiles = []
 
-futil = fileutils.File
+filewalk.walkSync "coffee/", (dirPath, dirs, files) ->
+  for f in files
+    appFiles.push("#{dirPath}/#{f}")
 
 copyfolder = (from,to) ->
-  console.log from,to
-  filewalk.walk from, (n, dirPath, dirs, files)->
+  filewalk.walkSync from, (dirPath, dirs, files)->
     for f in files
-      dir = f.substring 0,f.lastIndexOf("/")
-      tf = new futil("#{to}/#{dir}")
-      tf.createDirectory (error, created) ->
-      tf = new futil(f)
-      tf.copy "#{to}/#{f}",(error, copied)->
+      exec "mkdir -p #{to}/#{dirPath}/"
+      exec "cp #{dirPath}/#{f} #{to}/#{dirPath}/#{f}"
 
 task 'build:clean', "clean build folder", (options) ->
   console.log "Clearing build director"
@@ -44,7 +39,7 @@ task 'build:client', "build the html5 client", (options) ->
   remaining = appFiles.length
 
   for file, index in appFiles then do (file, index) ->
-    fs.readFile "coffee/#{file}.coffee", 'utf8', (err, fileContents) ->
+    fs.readFile "#{file}", 'utf8', (err, fileContents) ->
       throw err if err
       appContents[index] = fileContents
       process() if --remaining is 0
@@ -65,16 +60,9 @@ task 'build:client', "build the html5 client", (options) ->
   copyfolder "css/",options.output
 
   console.log "Copying plain resources"
-  from = "resources/plain"
-  to = options.output
-  filewalk.walk from, (n, dirPath, dirs, files)->
+  filewalk.walkSync "resources/plain", (dirPath, dirs, files)->
     for f in files
-      dir = (f.substring 0,f.lastIndexOf("/")).replace(from,"")   # note this wont work if for some stupid reason we have a nested resources/plain folder inside
-      tf = new futil("#{to}/#{dir}")
-      tf.createDirectory (error, created) ->
-      tf = new futil(f)
-      nf = f.replace(from,"")
-      tf.copy "#{to}/#{nf}",(error, copied)->
+      exec "cp #{dirPath}/#{f} #{options.output}/#{f}"
 
   console.log "Copying HTML"
   options.platform ?= ""

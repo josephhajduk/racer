@@ -1,6 +1,6 @@
 test =
   message: "Hello"
   showMessage: ->
-    alert message
+    alert @.message
 
 test.showMessage()
