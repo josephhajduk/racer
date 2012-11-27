@@ -1,0 +1,83 @@
+fs = require 'fs'
+{exec} = require 'child_process'
+filewalk = require 'file'
+fileutils = require "file-utils"
+
+option '-o', '--output [DIR]', 'directory for compiled code'
+option '-p', '--platform [DIR]', 'platform ("-cocoonjs")'
+
+appFiles = [
+  "main"
+]
+
+futil = fileutils.File
+
+copyfolder = (from,to) ->
+  console.log from,to
+  filewalk.walk from, (n, dirPath, dirs, files)->
+    for f in files
+      dir = f.substring 0,f.lastIndexOf("/")
+      tf = new futil("#{to}/#{dir}")
+      tf.createDirectory (error, created) ->
+      tf = new futil(f)
+      tf.copy "#{to}/#{f}",(error, copied)->
+
+task 'build:clean', "clean build folder", (options) ->
+  console.log "Clearing build director"
+  exec "rm -rf build/"
+  exec "mkdir build/"
+
+task 'build:client', "build the html5 client", (options) ->
+
+  console.log "Clearing build director"
+  exec "rm -rf build/"
+  exec "mkdir build/"
+
+  console.log "Building Client into #{options.output}"
+
+  console.log "Copying JS"
+  copyfolder "js/",options.output
+
+  console.log "Concatenating coffeescript"
+
+  appContents = new Array
+  remaining = appFiles.length
+
+  for file, index in appFiles then do (file, index) ->
+    fs.readFile "coffee/#{file}.coffee", 'utf8', (err, fileContents) ->
+      throw err if err
+      appContents[index] = fileContents
+      process() if --remaining is 0
+
+  console.log "Compiling coffeescript"
+
+  process = ->
+    fs.writeFile options.output+"/app.coffee", appContents.join('\n\n'), 'utf8', (err) ->
+      throw err if err
+      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ #{options.output}/app.coffee", (err, stdout, stderr) ->
+        throw err if err
+        console.log stdout + stderr
+        fs.unlink "#{options.output}/app.coffee", (err) ->
+          throw err if err
+          console.log 'Done.'
+
+  console.log "Copying CSS"
+  copyfolder "css/",options.output
+
+  console.log "Copying plain resources"
+  from = "resources/plain"
+  to = options.output
+  filewalk.walk from, (n, dirPath, dirs, files)->
+    for f in files
+      dir = (f.substring 0,f.lastIndexOf("/")).replace(from,"")   # note this wont work if for some stupid reason we have a nested resources/plain folder inside
+      tf = new futil("#{to}/#{dir}")
+      tf.createDirectory (error, created) ->
+      tf = new futil(f)
+      nf = f.replace(from,"")
+      tf.copy "#{to}/#{nf}",(error, copied)->
+
+  console.log "Copying HTML"
+  options.platform ?= ""
+  fs.createReadStream("html/index#{options.platform}.html").pipe(fs.createWriteStream("#{options.output}/index.html"));
+
+
