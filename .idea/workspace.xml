@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72854dcd-8fec-4185-b176-3c1901b004dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/racing_scene.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/scene_opening.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.psd" afterPath="$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/coffee/control.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/control.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/coffee/main.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/main.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/js/lib/misc.js" afterPath="$PROJECT_DIR$/racer-client/js/lib/misc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.coffee" afterPath="$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/racer-client.iml" afterPath="$PROJECT_DIR$/racer-client/racer-client.iml" />
     </list>
     <ignored path="racer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,164 +64,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="map_thecity.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.coffee">
+      <file leaf-file-name="ListLike.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="36" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+            <state line="5" column="10" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/build/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="339" column="23" selection-start="9331" selection-end="9331" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1354494659000" expanded="true" signature="1606:3702" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="1669:1675" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="1809:1895" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="1968:2054" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2127:2213" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2286:2372" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2445:2535" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2603:2692" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2640:2643" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2761:2840" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2794:2797" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2903:2991" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="2942:2945" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3057:3143" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3096:3099" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3207:3273" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3246:3249" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3351:3403" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3460:3512" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3611:3697" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3862:4335" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="3937:4329" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4058:4290" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4113:4140" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4208:4230" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4236:4259" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4296:4308" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4483:5327" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4695:5274" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4762:5233" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="4940:5002" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="5035:5227" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="5181:5219" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="5171:5195" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="5464:6210" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="5510:6184" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6004:6185" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6001:6161" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6167:6181" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6298:7731" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6905:7201" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="6888:7202" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="6935:7197" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7126:7168" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7395:7695" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7356:7696" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="7403:7691" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7594:7662" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7791:8661" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7887:8627" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="7933:8446" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="8108:8486" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="8176:8277" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="8645:8663" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10746:10756" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10838:10872" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10986:11008" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10360:10756" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10433:10718" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="10469:10719" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10879:11152" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10922:11153" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="10970:11148" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11080:11695" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11094:11684" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10901:11405" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="10912:11382" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10706:10963" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="10735:10905" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11177:11598" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11179:11573" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="11213:11563" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11724:12326" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11754:12289" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="11801:12248" placeholder="[...]" />
-                <marker date="1354494659000" expanded="true" signature="11829:12249" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="12011:12207" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="12035:12168" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="12130:12162" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="14519:14860" placeholder="{...}" />
-                <marker date="1354494659000" expanded="true" signature="14531:14812" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="control.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/control.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="43" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/main.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="72" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="racing_scene.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/racing_scene.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="23" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vector.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vector.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/vector.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="21" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.3808">
+            <state line="143" column="30" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="misc.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/js/lib/misc.js">
+      <file leaf-file-name="matrix.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scene_opening.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/scene_opening.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="40" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cakefile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/Cakefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="24" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
+            <state line="34" column="38" selection-start="809" selection-end="809" vertical-scroll-proportion="0.69390786">
               <folding />
             </state>
           </provider>
@@ -244,8 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/racer-client/coffee/test/test.coffee" />
-        <option value="$PROJECT_DIR$/racer-client/html/index_cocoonjs.html" />
         <option value="$PROJECT_DIR$/racer-client/resources/convert/map_thecity.coffee" />
         <option value="$PROJECT_DIR$/racer-client/resources/complex/map_thecity.coffee" />
         <option value="$PROJECT_DIR$/racer-client/build/index.html" />
@@ -259,14 +117,16 @@
         <option value="$PROJECT_DIR$/racer-client/build/js/app.js" />
         <option value="$PROJECT_DIR$/racer-client/coffee/control.coffee" />
         <option value="$PROJECT_DIR$/racer-client/js/lib/misc.js" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
         <option value="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+    <option name="x" value="65" />
     <option name="y" value="22" />
-    <option name="width" value="1068" />
+    <option name="width" value="1630" />
     <option name="height" value="1169" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -295,6 +155,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,38 +194,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,48 +243,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="racer-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -461,14 +257,14 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="settings.nodejs" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -476,16 +272,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node JS.Build Client">
-    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
-      <framework instance="" />
-      <additinalProperties startConsole="true" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -494,6 +280,14 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$" coffeescript-run="false">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -521,28 +315,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node JS Remote Debug">
-      <node-js-remote-debug />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
-      <setting name="nodePath" value="/usr/local/bin/node" />
-      <envs />
-      <setting name="passParentEnvVars" value="true" />
-      <setting name="nodeunitModuleDir" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="testType" value="JS_FILE" />
-      <setting name="jsFile" value="" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -555,24 +328,29 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -606,38 +384,47 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -664,58 +451,7 @@
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$" coffeescript-run="false">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CfmlUnitRunConfigurationType" factoryName="MXUnit" method="" path="" scope="Component" webpath="">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" web_path="">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
     <configuration default="false" name="Build Client" type="NodeJSConfigurationType" factoryName="Node JS" path-to-node="/usr/local/bin/node" path-to-js-file="../../../../../../usr/local/bin/cake" application-parameters="-o build build:client" working-dir="$PROJECT_DIR$/racer-client" coffeescript-run="false">
@@ -748,6 +484,27 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="SHOW_CLASSES" />
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="72854dcd-8fec-4185-b176-3c1901b004dd" name="Default" comment="" />
@@ -757,7 +514,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1068" height="1169" extended-state="0" />
+    <frame x="65" y="22" width="1630" height="1169" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -767,18 +524,20 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39924315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26010102" sideWeight="0.39694658" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26010102" sideWeight="0.26717559" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26125243" sideWeight="0.66793895" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26010102" sideWeight="0.39408398" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33206108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -848,19 +607,9 @@
         <state line="169" column="41" selection-start="4582" selection-end="4610" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/html/index_cocoonjs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="28" selection-end="28" vertical-scroll-proportion="0.045592707" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/js/lib/modernizr-2.6.2.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="44" selection-start="15414" selection-end="15414" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/build/resources/resources.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="4" selection-start="33" selection-end="51" vertical-scroll-proportion="0.021994134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/js/lib/jquery-1.8.3.min.js">
@@ -880,124 +629,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/coffee/main.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="72" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="13" column="72" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/coffee/racing_scene.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="23" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/Cakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" />
+        <state line="26" column="23" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/resources/complex/maps/thecity/map_thecity.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/build/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="339" column="23" selection-start="9331" selection-end="9331" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1354494659000" expanded="true" signature="1606:3702" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="1669:1675" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="1809:1895" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="1968:2054" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2127:2213" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2286:2372" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2445:2535" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2603:2692" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2640:2643" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2761:2840" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2794:2797" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2903:2991" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="2942:2945" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3057:3143" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3096:3099" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3207:3273" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3246:3249" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3351:3403" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3460:3512" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3611:3697" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3862:4335" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="3937:4329" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4058:4290" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4113:4140" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4208:4230" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4236:4259" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4296:4308" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4483:5327" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4695:5274" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4762:5233" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="4940:5002" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="5035:5227" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="5181:5219" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="5171:5195" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="5464:6210" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="5510:6184" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6004:6185" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6001:6161" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6167:6181" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6298:7731" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6905:7201" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="6888:7202" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="6935:7197" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7126:7168" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7395:7695" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7356:7696" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="7403:7691" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7594:7662" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7791:8661" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7887:8627" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="7933:8446" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="8108:8486" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="8176:8277" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="8645:8663" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10746:10756" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10838:10872" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10986:11008" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10360:10756" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10433:10718" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="10469:10719" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10879:11152" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10922:11153" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="10970:11148" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11080:11695" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11094:11684" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10901:11405" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="10912:11382" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10706:10963" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="10735:10905" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11177:11598" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11179:11573" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="11213:11563" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11724:12326" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11754:12289" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="11801:12248" placeholder="[...]" />
-            <marker date="1354494659000" expanded="true" signature="11829:12249" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="12011:12207" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="12035:12168" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="12130:12162" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="14519:14860" placeholder="{...}" />
-            <marker date="1354494659000" expanded="true" signature="14531:14812" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/coffee/control.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="43" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="36" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/coffee/scene_opening.coffee">
@@ -1007,14 +649,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/js/lib/misc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+        <state line="17" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/build/js/lib/caat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="26" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/ECMAScript.js2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/control.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="35" selection-start="2503" selection-end="2503" vertical-scroll-proportion="3.7800891">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="10" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/vector.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="21" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.3808">
+        <state line="143" column="30" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="38" selection-start="809" selection-end="809" vertical-scroll-proportion="0.69390786">
           <folding />
         </state>
       </provider>

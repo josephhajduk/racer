@@ -1,32 +1,9 @@
-
-#alternate syntax
-class VectorMath
-  add: (a,b) ->
-    a.add(b)
-
-  sub: (a,b) ->
-    a.sub(b)
-
-  multiply: (a,b) ->
-    a.multiply(b)
-
-  divide: (a,b) ->
-    a.divide(b)
-
-  dot: (a,b) ->
-    a.dot(b)
-
-  projection: (a,b) ->
-    a.projection(b)
-
-  cross: (a,b) ->
-    a.cross(b)
-
-class Vector
+class Vector extends ListLike
   constructor: (@values) ->
     @dim = @values.length
 
-  clone: -> new Vector(@values[..])
+  toString: ->
+    "Vector"+super
 
   x: -> @values[0]
   y: -> @values[1]
@@ -36,59 +13,45 @@ class Vector
 
   norm: -> Math.sqrt(@.dot @)
 
+  normalize: ->
+    new Vector(a / @norm() for a in @values)
+
   distance: (b) ->
-    diff = @.sub(b)
-    Math.sqrt(diff.dot diff)
-
-
-  sumF2: (f) ->
-    result = 0
-    for a in @values
-      result += f(result,a)
-    return result
+    @.sub(b).length()
 
   sum: ->
-    f = (a,b) -> a+b
-    @sumF2(f)
+    @fold(0, f = (a, b) -> a + b)
 
   multsum: ->
-    f = (a,b) -> a*b
-    @sumF2(f)
-
-  normalize: ->
-    new Vector(a/@norm() for a in @values)
+    @fold(0, (a, b) -> a * b )
 
   add: (b) ->
-    if b.dim = @dim
-      new Vector(an+bn for [an,bn] in zip(@values,b.value))
+    if b.dim == @dim
+      new Vector(an + bn for [an, bn] in zip(@values, b.values))
 
   neg: ->
     new Vector(-a for a in @values)
 
   sub: (b) ->
-    @add b.neg()
+    @add(b.neg())
 
   multiply: (b) ->
-    if b.dim = @dim
-      new Vector(an*bn for [an,bn] in zip(@values,b.value))
+    if b.dim?
+      if b.dim == @dim
+        new Vector(an * bn for [an, bn] in zip(@values, b.values))
 
   inverse: ->
     if !@values.contains(0)
-      new Vector(1/a for a in @values)
-    #todo: exception
+      new Vector(1 / a for a in @values)
 
   divide: (b) ->
-    @multiply b.inverse()
+    @multiply(b.inverse())
 
   dot: (b) ->
     @multiply(b).sum()
 
-  do: (f) ->
-    f(a) for a in @valuess
-
   rotate: (theta, p) ->
-    #assert that dim = 2
-    if(@dim = 2)
+    if(@dim == 2)
 
       cosTheta = Math.cos(theta)
       sinTheta = Math.sin(theta)
@@ -99,45 +62,88 @@ class Vector
       ])
 
   rotateDeg: (degress, p) ->
-    rad = degrees/180*Math.PI
-    rotate(rad,p)
+    rad = degrees / 180 * Math.PI
+    rotate(rad, p)
 
   # cos theta = a.b / (len of a * len ofv)
-  VectorAngle: (b) ->
-    #todo: verify that length != 0 for both Vectors
-    Math.acos( (@.dot b ) / ( @.norm() * v.norm()))
+  vectorAngle: (b) ->
+    if(( @.norm() * v.norm()) != 0)
+      Math.acos((@.dot b ) / ( @.norm() * v.norm()))
+
+  vectorAngleDeg: (b) ->
+    vectorAngle(b) / Math.PI * 180
 
   #projection of a onto b
   projection: (b) ->
     c = (@.dot b) / (b.dot b)
-
-    console.log("Projection:" + c)
-
-    new Vector( c*bn for bn in b.value)
+    new Vector(c * bn for bn in b.values)
 
   off: (b) ->
-    new Vector( a - p for [a,p] in zip(@values,@projection(b).value))
+    new Vector(a - p for [a, p] in zip(@values, @projection(b).values))
 
   cross: (b) ->
-    @clone()
+    @
 
   scale: (c) ->
-    new Vector( c*a for a in @values)
+    @for_each((x) -> c*x)
 
-  polynomial: ->
-    (x) -> sum(x^n * @values[n] for n in range(@dim))
+  addEach: (c) ->
+    @for_each((x) -> x+c)
+
+#alternate syntax
+class VectorMath
+  add: (a, b) ->
+    a.add(b)
+
+  sub: (a, b) ->
+    a.sub(b)
+
+  multiply: (a, b) ->
+    a.multiply(b)
+
+  divide: (a, b) ->
+    a.divide(b)
+
+  dot: (a, b) ->
+    a.dot(b)
+
+  projection: (a, b) ->
+    a.projection(b)
+
+  cross: (a, b) ->
+    a.cross(b)
 
 
 
-v1 = new Vector([0,1])
-v2 = new Vector([1,3])
-v3 = new Vector([3,2])
+testm = new Matrix([
+  ["a","b"]
+  ["c","d"]
+])
 
-proj = v2.projection v1
-offof = v2.off v1
-console.log(proj)
-console.log(offof)
-console.log(v3.cross(v2))
+test2 = new Matrix([
+  [1,2]
+  [3,4]
+])
+
+test3 = new Matrix([
+  [1,0]
+  [0,1]
+])
+
+vec1 = new Vector([0,0])
+vec2 = new Vector([1,0])
+vec3 = new Vector([0,1])
+vec4 = new Vector([1,1])
+
+console.log("MATRIX")
+
+console.log(test2.multiply(vec1).toString())
+console.log(test2.multiply(vec2).toString())
+console.log(test2.multiply(vec3).toString())
+console.log(test2.multiply(vec4).toString())
+
+console.log(test2.scale(5))
+console.log(test2.add(test3))
 
 
 
