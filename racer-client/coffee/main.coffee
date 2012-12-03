@@ -3,8 +3,8 @@ class RACER
     console.log "Starting RACER"
 
     @director = new CAAT.Director()
-    #@director.initialize 336, 240, document.getElementById('main')
-    #@director.setClear false
+    @director.initialize 336, 240, document.getElementById('main')
+    @director.setClear false
 
     @control = new Control({},true)
 
@@ -14,9 +14,8 @@ class RACER
     new CAAT.ImagePreloader().loadImages racer_resources_json, (counter, images)=>
       if counter == images.length
         @director.setImagesCache(images)
-        #hide css loading screen
 
-        alert "GODJ"
+        @opening_scene = new scene_opening(@director)
 
         CAAT.loop(60)
       else

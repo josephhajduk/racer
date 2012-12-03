@@ -1,50 +1,51 @@
 class Control
-  constructor: (settings={},@debug=false) ->
-    defaultSettings =
-        steer_deadzone: 0.1
-        throttle_deadzone: 0.1
-        breaks_deadzone: 0.1
-        button_threshold: 0.5
-        kb_map:
-          38: "throttle"
-          40: "breaks"
-          37: "steer_left"
-          39: "steer_right"
-          65: "start"
-          83: "button1"
-          68: "button2"
-          70: "button3"
-          71: "button4"
-        gamepad: 0
-        gamepad_map:
-          start:
-            kind:"button"
-            id:0
-          button1:
-            kind:"button"
-            id:1
-          button2:
-            kind:"button"
-            id:2
-          button3:
-            kind:"button"
-            id:3
-          button4:
-            kind:"button"
-            id:4
-          steer:
-            kind:"axis"
-            id:2
-          throttle: #throttle ignores values < 0
-            kind:"axis"
-            invert:true
-            id:1
-          breaks: #break ignores values < 0
-            kind:"axis" 
-            invert:false
-            id:1
 
+  constructor: (setSettings={},@debug=false) ->
     #default handlers
+
+    @defaultSettings =
+      steer_deadzone: 0.1
+      throttle_deadzone: 0.1
+      breaks_deadzone: 0.1
+      button_threshold: 0.5
+      kb_map:
+        38: "throttle"
+        40: "breaks"
+        37: "steer_left"
+        39: "steer_right"
+        65: "start"
+        83: "button1"
+        68: "button2"
+        70: "button3"
+        71: "button4"
+      gamepad: 0
+      gamepad_map:
+        start:
+          kind:"button"
+          id:0
+        button1:
+          kind:"button"
+          id:1
+        button2:
+          kind:"button"
+          id:2
+        button3:
+          kind:"button"
+          id:3
+        button4:
+          kind:"button"
+          id:4
+        steer:
+          kind:"axis"
+          id:2
+        throttle: #throttle ignores values < 0
+          kind:"axis"
+          invert:true
+          id:1
+        breaks: #break ignores values < 0
+          kind:"axis"
+          invert:false
+          id:1
 
     @action_start = (state) =>
       if @debug and state
@@ -86,10 +87,13 @@ class Control
       if @debug 
         console.log("action:breaks->#{amount}")
 
-    for key,attr of settings
-      defaultSettings[key] = attr
+    @settings = []
 
-    @settings = defaultSettings
+    for key,attr of @defaultSettings
+      @settings[key] = attr
+
+    for key,attr of setSettings
+      @settings[key] = attr
 
     if gamepadSupport.init()
       requestAnimFrame => @poll_gamepad()
@@ -108,7 +112,7 @@ class Control
     #console.log key_event
 
   poll_gamepad: ->
-    gamepad = gamepadSupport.gamepads[@settings.gamepad];
+    gamepad = gamepadSupport?.gamepads[@settings.gamepad];
     if gamepad?
       for action, mapping of @settings.gamepad_map
         func = @["action_#{action}"]
@@ -124,6 +128,9 @@ class Control
 
     requestAnimFrame => @poll_gamepad()
 
+  doConfigureScene: (director) ->
+    #we need to "pause" this director
+    #then pop up a nice UI for configuring controls
 
 
 
