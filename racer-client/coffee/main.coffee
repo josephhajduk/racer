@@ -22,4 +22,4 @@ class RACER
         #adjust css loading screen
         console.log "LOADING #{counter}/#{images.length}"
 
-racer = new RACER()
+#racer = new RACER()

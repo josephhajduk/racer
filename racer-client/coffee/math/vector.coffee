@@ -123,59 +123,8 @@ class VectorMath
   cross: (a, b) ->
     a.cross(b)
 
-
-
-testm = new Matrix([
-  ["a","b"]
-  ["c","d"]
-])
-
-test2 = new Matrix([
-  [1,2]
-  [3,4]
-])
-
-test3 = new Matrix([
-  [1,0]
-  [0,1]
-])
-
-#tests cause V is last letter lalws
-
-vec1 = new Vector([0,0])
-vec2 = new Vector([1,0])
-vec3 = new Vector([0,1])
-vec4 = new Vector([1,1])
-
-console.log("MATRIX")
-
-console.log(test2.multiply(vec1).toString())
-console.log(test2.multiply(vec2).toString())
-console.log(test2.multiply(vec3).toString())
-console.log(test2.multiply(vec4).toString())
-
-console.log(test2.scale(5).toString())
-console.log(test2.add(test3).toString())
-console.log(test2.toString())
-
-console.log("2d")
-console.log(RotationMatrix2D.by(0.5).toString())
-
-console.log("3d")
-console.log(RotationMatrix3D.by(0.2,0.5,1.2).toString())
-
-console.log("cross")
-va = new Vector([1,2,3])
-vb = new Vector([4,5,6])
-console.log(va.cross(vb).toString())
-
-console.log(Matrix.identity(4).toString())
-
-
-console.log(RotationMatrix3D.by(0.2,0.5,1.2).augment(Matrix.identity(3)).toString())
-
-
-
+root = exports ? this
+root.Vector = Vector
 
 
 

@@ -50,14 +50,17 @@ task 'build:client', "build the html5 client", (options) ->
   console.log "Compiling coffeescript"
 
   process = ->
-    fs.writeFile options.output+"/app.coffee", appContents.join('\n\n'), 'utf8', (err) ->
+    fs.writeFile "app.coffee", appContents.join('\n\n'), 'utf8', (err) ->
       throw err if err
-      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ #{options.output}/app.coffee", (err, stdout, stderr) ->
+      exec "/usr/local/bin/node /usr/local/bin/jasmine-node --coffee specs" , (err, stdout, stderr) ->
         throw err if err
         console.log stdout + stderr
-        fs.unlink "#{options.output}/app.coffee", (err) ->
-          throw err if err
-          console.log 'Done.'
+      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ app.coffee", (err, stdout, stderr) ->
+        throw err if err
+        console.log stdout + stderr
+        #fs.unlink "#{options.output}/app.coffee", (err) ->
+        #  throw err if err
+        #  console.log 'Done.'
 
   console.log "Copying CSS"
   filewalk.walkSync "css/", (dirPath, dirs, files)->
