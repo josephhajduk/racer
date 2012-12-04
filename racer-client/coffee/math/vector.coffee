@@ -2,13 +2,14 @@ class Vector extends ListLike
   constructor: (@values) ->
     @dim = @values.length
 
-  toString: ->
-    "Vector"+super
+    @x = @values[0]
+    @y = @values[1]
+    @z = @values[2]
+    @t = @values[3]
 
-  x: -> @values[0]
-  y: -> @values[1]
-  z: -> @values[2]
-  t: -> @values[3]
+  toString: ->
+    "Vector "+super
+
   part: (i) -> @values[i]
 
   norm: -> Math.sqrt(@.dot @)
@@ -30,7 +31,7 @@ class Vector extends ListLike
       new Vector(an + bn for [an, bn] in zip(@values, b.values))
 
   sub: (b) ->
-    @add(b.neg())
+    @add(b.negative())
 
   multiply: (b) ->
     if b.dim?
@@ -91,14 +92,14 @@ class Vector extends ListLike
           [@y(), -@x(),     0]
         ]).multiply(b)
 
-  neg: ->
+  negative: ->
     @scale(-1)
 
   scale: (c) ->
-    @for_each((x) -> c*x)
+    new Vector(@for_each((x) -> c*x))
 
   addEach: (c) ->
-    @for_each((x) -> x+c)
+    new Vector(@for_each((x) -> x+c))
 
 #alternate syntax
 class VectorMath
