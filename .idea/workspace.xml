@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72854dcd-8fec-4185-b176-3c1901b004dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/Countable.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/racer-client/coffee/math/Rotation.coffee" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/math/Matrix.coffee" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/math/Vector.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/racer-client.iml" afterPath="$PROJECT_DIR$/racer-client/racer-client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" afterPath="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
     </list>
     <ignored path="racer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,25 +68,43 @@
       <file leaf-file-name="ListLike.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="10" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vector.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/vector.coffee">
+      <file leaf-file-name="Countable.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Countable.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="30" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matrix.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee">
+      <file leaf-file-name="Vector.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Vector.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="38" selection-start="809" selection-end="809" vertical-scroll-proportion="0.69390786">
+            <state line="44" column="49" selection-start="834" selection-end="834" vertical-scroll-proportion="-30.461538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Matrix.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Matrix.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="46" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.38709676">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rotation.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Rotation.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="38" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,10 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/racer-client/resources/convert/map_thecity.coffee" />
-        <option value="$PROJECT_DIR$/racer-client/resources/complex/map_thecity.coffee" />
-        <option value="$PROJECT_DIR$/racer-client/build/index.html" />
-        <option value="$PROJECT_DIR$/racer-client/Cakefile" />
         <option value="$PROJECT_DIR$/racer-client/html/index.html" />
         <option value="$PROJECT_DIR$/racer-client/js/lib/Gamepad.js" />
         <option value="$PROJECT_DIR$/racer-client/coffee/main.coffee" />
@@ -117,17 +132,21 @@
         <option value="$PROJECT_DIR$/racer-client/build/js/app.js" />
         <option value="$PROJECT_DIR$/racer-client/coffee/control.coffee" />
         <option value="$PROJECT_DIR$/racer-client/js/lib/misc.js" />
-        <option value="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/rotation.coffee" />
         <option value="$PROJECT_DIR$/racer-client/coffee/math/vector.coffee" />
         <option value="$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/Countable.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/Vector.coffee" />
+        <option value="$PROJECT_DIR$/racer-client/coffee/math/Matrix.coffee" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="4" />
     <option name="y" value="22" />
-    <option name="width" value="1630" />
-    <option name="height" value="1169" />
+    <option name="width" value="1531" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -514,7 +533,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="22" width="1630" height="1169" extended-state="0" />
+    <frame x="4" y="22" width="1531" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -528,11 +547,11 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26010102" sideWeight="0.26717559" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27744108" sideWeight="0.26868495" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26010102" sideWeight="0.39408398" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33206108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27744108" sideWeight="0.39545885" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32923368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -602,16 +621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/node_modules/file/lib/file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="41" selection-start="4582" selection-end="4610" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/js/lib/modernizr-2.6.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="44" selection-start="15414" selection-end="15414" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/js/lib/jquery-1.8.3.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -675,21 +684,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/ListLike.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="10" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/vector.coffee">
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Rotation.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="30" selection-start="2560" selection-end="2560" vertical-scroll-proportion="0.0">
+        <state line="22" column="38" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/matrix.coffee">
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Vector.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="809" selection-end="809" vertical-scroll-proportion="0.69390786">
+        <state line="44" column="49" selection-start="834" selection-end="834" vertical-scroll-proportion="-30.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Countable.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/racer-client/coffee/math/Matrix.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="46" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.38709676">
           <folding />
         </state>
       </provider>

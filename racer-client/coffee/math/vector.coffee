@@ -29,9 +29,6 @@ class Vector extends ListLike
     if b.dim == @dim
       new Vector(an + bn for [an, bn] in zip(@values, b.values))
 
-  neg: ->
-    new Vector(-a for a in @values)
-
   sub: (b) ->
     @add(b.neg())
 
@@ -50,6 +47,10 @@ class Vector extends ListLike
   dot: (b) ->
     @multiply(b).sum()
 
+  apply_transformation: (m) ->
+    m.multiply(@)
+
+  # todo use linear transformation matrix
   rotate: (theta, p) ->
     if(@dim == 2)
 
@@ -82,7 +83,16 @@ class Vector extends ListLike
     new Vector(a - p for [a, p] in zip(@values, @projection(b).values))
 
   cross: (b) ->
-    @
+    if b.dim?
+      if @dim == 3 and b.dim == 3
+        new Matrix([
+          [   0, -@z(),  @y()]
+          [@z(),     0, -@x()]
+          [@y(), -@x(),     0]
+        ]).multiply(b)
+
+  neg: ->
+    @scale(-1)
 
   scale: (c) ->
     @for_each((x) -> c*x)
@@ -130,6 +140,8 @@ test3 = new Matrix([
   [0,1]
 ])
 
+#tests cause V is last letter lalws
+
 vec1 = new Vector([0,0])
 vec2 = new Vector([1,0])
 vec3 = new Vector([0,1])
@@ -142,10 +154,25 @@ console.log(test2.multiply(vec2).toString())
 console.log(test2.multiply(vec3).toString())
 console.log(test2.multiply(vec4).toString())
 
-console.log(test2.scale(5))
-console.log(test2.add(test3))
+console.log(test2.scale(5).toString())
+console.log(test2.add(test3).toString())
+console.log(test2.toString())
+
+console.log("2d")
+console.log(RotationMatrix2D.by(0.5).toString())
+
+console.log("3d")
+console.log(RotationMatrix3D.by(0.2,0.5,1.2).toString())
+
+console.log("cross")
+va = new Vector([1,2,3])
+vb = new Vector([4,5,6])
+console.log(va.cross(vb).toString())
+
+console.log(Matrix.identity(4).toString())
 
 
+console.log(RotationMatrix3D.by(0.2,0.5,1.2).augment(Matrix.identity(3)).toString())
 
 
 

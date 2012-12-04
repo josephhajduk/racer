@@ -1,7 +1,36 @@
 class Matrix extends Countable
   constructor: (@values) ->
-    @dim_n = values.length
-    @dim_m = values[0].length
+    @dim_m = values.length
+    @dim_n = values[0].length
+
+  @identity: (n) ->
+    ident = (i,j) ->
+      if i == j
+        1
+      else
+        0
+
+    new Matrix(ident(i,j) for i in range(n) for j in range(n))
+
+  augment: (b) ->
+    if b.dim?
+      #vector
+      if b.dim == @dim_m
+        new Matrix( @values[r].push(b.values[r]) for r in range(@dim_m) )
+
+    if b.dim_m?
+      if b.dim_m == @dim_m
+        new Matrix( @values[r].concat(b.values[r]) for r in range(@dim_m))
+
+
+  diagonal: ->
+    new Vector(@values[i][i] for i in range(Math.min(@dim_m,@dim_n)))
+
+  trace: ->
+    @diagonal().sum()
+
+  toString: ->
+    "[\n"+("  [#{row.join(",")}]" for row in @values).join("\n") + "\n]"
 
   length: -> @dim_n*@dim_m
 
@@ -9,6 +38,9 @@ class Matrix extends Countable
     row = Math.floor(i / dim_m);
     col = i % dim_m
     @values[row][col]
+
+  element: (row,column) ->
+    @values[row][column]
 
   row_vectors: () ->
     new Vector(row) for row in @values
@@ -37,8 +69,6 @@ class Matrix extends Countable
   multiply: (b) ->
     if b.dim?
       if b.dim == @dim_m
-        console.log(b)
-        console.log(b.multiply(row).toString()) for row in @row_vectors()
         new Vector(
             b.dot(row) for row in @row_vectors()
           )
