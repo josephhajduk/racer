@@ -8,12 +8,17 @@ option '-p', '--platform [DIR]', 'platform ("-cocoonjs")'
 
 appFiles = []
 
-jsFiles = [
-]
+testFiles = []
+
+jsFiles = []
 
 filewalk.walkSync "coffee/", (dirPath, dirs, files) ->
   for f in files
     appFiles.push("#{dirPath}/#{f}")
+
+filewalk.walkSync "specs/", (dirPath, dirs, files) ->
+  for f in files
+    testFiles.push("#{dirPath}/#{f}")
 
 task 'host', "host with node connect", (options) ->
   console.log "starting web server"
@@ -39,7 +44,10 @@ task 'build:client', "build the html5 client", (options) ->
   console.log "Concatenating coffeescript"
 
   appContents = new Array
+  testContents = new Array
+
   remaining = appFiles.length
+  remainingTests = testFiles.length
 
   for file, index in appFiles then do (file, index) ->
     fs.readFile "#{file}", 'utf8', (err, fileContents) ->
@@ -47,20 +55,33 @@ task 'build:client', "build the html5 client", (options) ->
       appContents[index] = fileContents
       process() if --remaining is 0
 
+  for file, index in testFiles then do (file, index) ->
+    fs.readFile "#{file}", 'utf8', (err, fileContents) ->
+      throw err if err
+      testContents[index] = fileContents
+      processTest() if --remainingTests is 0
+
   console.log "Compiling coffeescript"
 
   process = ->
-    fs.writeFile "app.coffee", appContents.join('\n\n'), 'utf8', (err) ->
+    fs.writeFile "#{options.output}/app.coffee", appContents.join('\n\n'), 'utf8', (err) ->
       throw err if err
-      exec "/usr/local/bin/node /usr/local/bin/jasmine-node --coffee specs" , (err, stdout, stderr) ->
+      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ #{options.output}/app.coffee", (err, stdout, stderr) ->
         throw err if err
         console.log stdout + stderr
-      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ app.coffee", (err, stdout, stderr) ->
+        fs.unlink "#{options.output}/app.coffee", (err) ->
+          throw err if err
+          console.log 'Done.'
+
+  processTest = ->
+    fs.writeFile "#{options.output}/specs.coffee", testContents.join('\n\n'), 'utf8', (err) ->
+      throw err if err
+      exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ #{options.output}/specs.coffee", (err, stdout, stderr) ->
         throw err if err
         console.log stdout + stderr
-        #fs.unlink "#{options.output}/app.coffee", (err) ->
-        #  throw err if err
-        #  console.log 'Done.'
+        fs.unlink "#{options.output}/specs.coffee", (err) ->
+          throw err if err
+          console.log 'Done.'
 
   console.log "Copying CSS"
   filewalk.walkSync "css/", (dirPath, dirs, files)->

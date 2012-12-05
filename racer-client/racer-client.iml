@@ -5,6 +5,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Node.js v0.6.7 Core Library" level="application" />
+    <orderEntry type="library" name="jQuery-1.8.2" level="application" />
   </component>
 </module>
 

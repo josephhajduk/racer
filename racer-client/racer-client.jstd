@@ -1,0 +1,9 @@
+load:
+  # jasmine dependency
+  - lib/jasmine/lib/jasmine-core/jasmine.js
+
+  # to make our jasmine tests work within jstd
+  - lib/jasmine-jstd-adapter/src/jasmineAdapter.js
+
+  - build/js/app.js
+  - build/js/specs.js

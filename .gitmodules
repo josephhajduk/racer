@@ -1,0 +1,6 @@
+[submodule "racer-client/lib/jasmine-jstd-adapter"]
+	path = racer-client/lib/jasmine-jstd-adapter
+	url = git://github.com/ibolmo/jasmine-jstd-adapter.git
+[submodule "racer-client/lib/jasmine"]
+	path = racer-client/lib/jasmine
+	url = git://github.com/pivotal/jasmine.git

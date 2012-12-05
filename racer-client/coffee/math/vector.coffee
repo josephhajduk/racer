@@ -38,12 +38,12 @@ class Vector extends ListLike
       if b.dim == @dim
         new Vector(an * bn for [an, bn] in zip(@values, b.values))
 
-  inverse: ->
-    if !@values.contains(0)
+  entrywise_inverse: ->
+    if @values.indexOf(0) == -1
       new Vector(1 / a for a in @values)
 
   divide: (b) ->
-    @multiply(b.inverse())
+    @multiply(b.entrywise_inverse())
 
   dot: (b) ->
     @multiply(b).sum()
