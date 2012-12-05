@@ -1,0 +1,125 @@
+<!DOCTYPE html>  <html> <head>   <title>Control.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="Car.html">                 Car.coffee               </a>                                           <a class="source" href="Control.html">                 Control.coffee               </a>                                           <a class="source" href="Feature.html">                 Feature.coffee               </a>                                           <a class="source" href="TrackDefinition.html">                 TrackDefinition.coffee               </a>                                           <a class="source" href="lazy.html">                 lazy.coffee               </a>                                           <a class="source" href="main.html">                 main.coffee               </a>                                           <a class="source" href="Countable.html">                 Countable.coffee               </a>                                           <a class="source" href="Line.html">                 Line.coffee               </a>                                           <a class="source" href="ListLike.html">                 ListLike.coffee               </a>                                           <a class="source" href="Matrix.html">                 Matrix.coffee               </a>                                           <a class="source" href="Rotation.html">                 Rotation.coffee               </a>                                           <a class="source" href="Vector.html">                 Vector.coffee               </a>                                           <a class="source" href="misc.html">                 misc.coffee               </a>                                           <a class="source" href="scene_opening.html">                 scene_opening.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               Control.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="k">class</span> <span class="nx">Control</span>
+
+  <span class="nv">constructor: </span><span class="nf">(setSettings={},@debug=false) -&gt;</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>default handlers</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="vi">@defaultSettings =</span>
+      <span class="nv">steer_deadzone: </span><span class="mf">0.1</span>
+      <span class="nv">throttle_deadzone: </span><span class="mf">0.1</span>
+      <span class="nv">breaks_deadzone: </span><span class="mf">0.1</span>
+      <span class="nv">button_threshold: </span><span class="mf">0.5</span>
+      <span class="nv">kb_map:</span>
+        <span class="mi">38</span><span class="o">:</span> <span class="s">&quot;throttle&quot;</span>
+        <span class="mi">40</span><span class="o">:</span> <span class="s">&quot;breaks&quot;</span>
+        <span class="mi">37</span><span class="o">:</span> <span class="s">&quot;steer_left&quot;</span>
+        <span class="mi">39</span><span class="o">:</span> <span class="s">&quot;steer_right&quot;</span>
+        <span class="mi">65</span><span class="o">:</span> <span class="s">&quot;start&quot;</span>
+        <span class="mi">83</span><span class="o">:</span> <span class="s">&quot;button1&quot;</span>
+        <span class="mi">68</span><span class="o">:</span> <span class="s">&quot;button2&quot;</span>
+        <span class="mi">70</span><span class="o">:</span> <span class="s">&quot;button3&quot;</span>
+        <span class="mi">71</span><span class="o">:</span> <span class="s">&quot;button4&quot;</span>
+      <span class="nv">gamepad: </span><span class="mi">0</span>
+      <span class="nv">gamepad_map:</span>
+        <span class="nv">start:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;button&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">0</span>
+        <span class="nv">button1:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;button&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">1</span>
+        <span class="nv">button2:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;button&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">2</span>
+        <span class="nv">button3:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;button&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">3</span>
+        <span class="nv">button4:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;button&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">4</span>
+        <span class="nv">steer:</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;axis&quot;</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">2</span>
+        <span class="nv">throttle: </span><span class="c1">#throttle ignores values &lt; 0</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;axis&quot;</span>
+          <span class="nx">invert</span><span class="o">:</span><span class="kc">true</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">1</span>
+        <span class="nv">breaks: </span><span class="c1">#break ignores values &lt; 0</span>
+          <span class="nx">kind</span><span class="o">:</span><span class="s">&quot;axis&quot;</span>
+          <span class="nx">invert</span><span class="o">:</span><span class="kc">false</span>
+          <span class="nx">id</span><span class="o">:</span><span class="mi">1</span>
+
+    <span class="vi">@action_start = </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> <span class="o">and</span> <span class="nx">state</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:start-&gt;</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_button1 = </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> <span class="o">and</span> <span class="nx">state</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:button1-&gt;</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_button2 = </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> <span class="o">and</span> <span class="nx">state</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:button2-&gt;</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_button3 = </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> <span class="o">and</span> <span class="nx">state</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:button3-&gt;</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_button4 = </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> <span class="o">and</span> <span class="nx">state</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:button4-&gt;</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_steer_left = </span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:steer-&gt;</span><span class="si">#{</span><span class="o">-</span><span class="nx">amount</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_steer_right = </span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:steer-&gt;</span><span class="si">#{</span><span class="nx">amount</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_steer = </span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:steer-&gt;</span><span class="si">#{</span><span class="nx">amount</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_throttle = </span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:throttle-&gt;</span><span class="si">#{</span><span class="nx">amount</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@action_breaks = </span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="k">if</span> <span class="nx">@debug</span> 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;action:breaks-&gt;</span><span class="si">#{</span><span class="nx">amount</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="vi">@settings = </span><span class="p">[]</span>
+
+    <span class="k">for</span> <span class="nx">key</span><span class="p">,</span><span class="nx">attr</span> <span class="k">of</span> <span class="nx">@defaultSettings</span>
+      <span class="nx">@settings</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">attr</span>
+
+    <span class="k">for</span> <span class="nx">key</span><span class="p">,</span><span class="nx">attr</span> <span class="k">of</span> <span class="nx">setSettings</span>
+      <span class="nx">@settings</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">attr</span>
+
+    <span class="k">if</span> <span class="nx">gamepadSupport</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+      <span class="nx">requestAnimFrame</span> <span class="o">=&gt;</span> <span class="nx">@poll_gamepad</span><span class="p">()</span>
+
+    <span class="nx">CAAT</span><span class="p">.</span><span class="nx">registerKeyListener</span> <span class="nx">@handle_keydown</span>
+
+  <span class="nv">handle_keydown: </span><span class="p">(</span><span class="nx">key_event</span><span class="p">)</span><span class="o">=&gt;</span>
+    <span class="k">for</span> <span class="nx">key</span><span class="p">,</span><span class="nx">action</span> <span class="k">of</span> <span class="nx">@settings</span><span class="p">.</span><span class="nx">kb_map</span>
+      <span class="k">if</span> <span class="nx">key_event</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">==</span> <span class="nx">key</span>
+        <span class="nv">func = </span><span class="nx">@</span><span class="p">[</span><span class="s">&quot;action_</span><span class="si">#{</span><span class="nx">action</span><span class="si">}</span><span class="s">&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nx">key_event</span><span class="p">.</span><span class="nx">action</span> <span class="o">==</span> <span class="s">&quot;up&quot;</span>
+          <span class="nx">func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">key_event</span><span class="p">.</span><span class="nx">action</span> <span class="o">==</span> <span class="s">&quot;down&quot;</span>
+          <span class="nx">func</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>console.log key_event</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nv">poll_gamepad: </span><span class="o">-&gt;</span>
+    <span class="nv">gamepad = </span><span class="nx">gamepadSupport</span><span class="o">?</span><span class="p">.</span><span class="nx">gamepads</span><span class="p">[</span><span class="nx">@settings</span><span class="p">.</span><span class="nx">gamepad</span><span class="p">];</span>
+    <span class="k">if</span> <span class="nx">gamepad</span><span class="o">?</span>
+      <span class="k">for</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">mapping</span> <span class="k">of</span> <span class="nx">@settings</span><span class="p">.</span><span class="nx">gamepad_map</span>
+        <span class="nv">func = </span><span class="nx">@</span><span class="p">[</span><span class="s">&quot;action_</span><span class="si">#{</span><span class="nx">action</span><span class="si">}</span><span class="s">&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nx">mapping</span><span class="p">.</span><span class="nx">kind</span> <span class="o">==</span> <span class="s">&quot;button&quot;</span>
+          <span class="nx">func</span><span class="p">(</span><span class="nx">gamepad</span><span class="p">.</span><span class="nx">buttons</span><span class="p">[</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">@settings</span><span class="p">.</span><span class="nx">button_threshold</span><span class="p">)</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="nv">mapping.kind = </span><span class="s">&quot;axis&quot;</span>
+          <span class="nv">value = </span><span class="nx">gamepad</span><span class="p">.</span><span class="nx">axes</span><span class="p">[</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span>
+
+          <span class="k">if</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nx">@settings</span><span class="p">[</span><span class="s">&quot;</span><span class="si">#{</span><span class="nx">action</span><span class="si">}</span><span class="s">_deadzone&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nx">mapping</span><span class="p">.</span><span class="nx">invert</span>
+              <span class="nv">value = </span><span class="o">-</span><span class="nx">value</span>
+            <span class="nx">func</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+
+    <span class="nx">requestAnimFrame</span> <span class="o">=&gt;</span> <span class="nx">@poll_gamepad</span><span class="p">()</span>
+
+  <span class="nv">doConfigureScene: </span><span class="nf">(director) -&gt;</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>we need to "pause" this director
+then pop up a nice UI for configuring controls</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

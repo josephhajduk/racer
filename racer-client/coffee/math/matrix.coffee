@@ -1,5 +1,18 @@
 class Matrix extends Countable
-  constructor: (@values) ->
+  constructor: (@values, field) ->
+
+    @field =
+      name: "R"
+      add: (a,b) -> a+b
+      mult: (a,b) -> a*b
+      iadd: (a) -> -a
+      imult: (a) -> 1/a if a != 0
+      zero: 0
+      one: 1
+
+    if field?
+      @field = field
+
     @dim_m = values.length
     @dim_n = values[0].length
 

@@ -33,7 +33,15 @@ task 'build:clean', "clean build folder", (options) ->
 
 task 'build:client', "build the html5 client", (options) ->
 
+  #console.log "Building Docs"
+
+  #exec "/usr/local/bin/node /usr/local/bin/docco coffee/*.coffee coffee/*/*.coffee", (err, stdout, stderr) ->
+  #  throw err if err
+  #  console.log(stdoud)
+  #  console.log(stderr)
+
   console.log "Building Client into #{options.output}"
+
 
   console.log "Copying JS"
   filewalk.walkSync "js/", (dirPath, dirs, files)->
@@ -68,6 +76,8 @@ task 'build:client', "build the html5 client", (options) ->
       throw err if err
       exec "/usr/local/bin/node /usr/local/bin/coffee --compile --output #{options.output}/js/ #{options.output}/app.coffee", (err, stdout, stderr) ->
         throw err if err
+        exec "/usr/local/bin/node /usr/local/bin/uglifyjs -o #{options.output}/js/app-min.js #{options.output}/js/app.js"
+        #exec "java -jar lib/compiler.jar --js #{options.output}/js/app.js --js_output_file  #{options.output}/js/app-min.js"
         console.log stdout + stderr
         fs.unlink "#{options.output}/app.coffee", (err) ->
           throw err if err

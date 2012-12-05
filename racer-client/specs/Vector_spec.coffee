@@ -15,6 +15,15 @@ describe "Vector", ->
 
   precision = 0.00001
 
+  describe "should provide some convinent static constants, such as", ->
+    it "the unitX method which returns the unit vector in the x direction", ->
+      expect(Vector.unitX().x).toEqual 1
+      expect(Vector.unitX().y).toEqual 0
+
+    it "the unitY method which returns the unit vector in the y direction", ->
+      expect(Vector.unitY().x).toEqual 0
+      expect(Vector.unitY().y).toEqual 1
+
   describe "should provide accesor methods, which", ->
     it "can be used to print a large vector as a string", ->
       expect(v1.toString()).toMatch /Vector ([0-9|,]*)/i
