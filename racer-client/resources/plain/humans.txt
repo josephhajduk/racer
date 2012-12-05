@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Joseph Hajduk -- Developer -- @JosephHajduk
 
 # THANKS
 
-    <name>
+    Brandy Bannister
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    jQuery, Modernizr, CAAT
+    Coffeescript, Jasmine, JSTD

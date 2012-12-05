@@ -8,7 +8,7 @@ class Vector extends ListLike
     @t = @values[3]
 
   toString: ->
-    "Vector "+super
+    "Vector " + super
 
   part: (i) -> @values[i]
 
@@ -18,13 +18,13 @@ class Vector extends ListLike
     new Vector(a / @norm() for a in @values)
 
   distance: (b) ->
-    @.sub(b).length()
+    @.sub(b).norm()
 
   sum: ->
     @fold(0, f = (a, b) -> a + b)
 
   multsum: ->
-    @fold(0, (a, b) -> a * b )
+    @fold(1, (a, b) -> a * b)
 
   add: (b) ->
     if b.dim == @dim
@@ -42,38 +42,22 @@ class Vector extends ListLike
     if @values.indexOf(0) == -1
       new Vector(1 / a for a in @values)
 
-  divide: (b) ->
-    @multiply(b.entrywise_inverse())
-
   dot: (b) ->
     @multiply(b).sum()
 
   apply_transformation: (m) ->
     m.multiply(@)
 
-  # todo use linear transformation matrix
-  rotate: (theta, p) ->
-    if(@dim == 2)
-
-      cosTheta = Math.cos(theta)
-      sinTheta = Math.sin(theta)
-
-      new Vector([
-        p.x + @.x * cosTheta - p.x * cosTheta - @.y * sinTheta + p.y * sinTheta
-        p.y + @.y * cosTheta - p.y * cosTheta + @.x * sinTheta - p.x * sinTheta
-      ])
-
-  rotateDeg: (degress, p) ->
-    rad = degrees / 180 * Math.PI
-    rotate(rad, p)
+  rotate: (theta, yaw, roll) ->
+    if @dim == 2
+      @apply_transformation(RotationMatrix2D.by(theta))
+    else if @dim == 3
+      @apply_transformation(RotationMatrix3D.by(theta, yaw, roll))
 
   # cos theta = a.b / (len of a * len ofv)
   vectorAngle: (b) ->
-    if(( @.norm() * v.norm()) != 0)
-      Math.acos((@.dot b ) / ( @.norm() * v.norm()))
-
-  vectorAngleDeg: (b) ->
-    vectorAngle(b) / Math.PI * 180
+    if(( @.norm() * b.norm()) != 0)
+      Math.acos((@.dot b ) / ( @.norm() * b.norm()))
 
   #projection of a onto b
   projection: (b) ->
@@ -87,42 +71,19 @@ class Vector extends ListLike
     if b.dim?
       if @dim == 3 and b.dim == 3
         new Matrix([
-          [   0, -@z(),  @y()]
-          [@z(),     0, -@x()]
-          [@y(), -@x(),     0]
+          [ 0, -@z, @y]
+          [@z, 0, -@x]
+          [-@y, @x, 0]
         ]).multiply(b)
 
   negative: ->
     @scale(-1)
 
   scale: (c) ->
-    new Vector(@for_each((x) -> c*x))
+    new Vector(@for_each((x) -> c * x))
 
   addEach: (c) ->
-    new Vector(@for_each((x) -> x+c))
-
-#alternate syntax
-class VectorMath
-  add: (a, b) ->
-    a.add(b)
-
-  sub: (a, b) ->
-    a.sub(b)
-
-  multiply: (a, b) ->
-    a.multiply(b)
-
-  divide: (a, b) ->
-    a.divide(b)
-
-  dot: (a, b) ->
-    a.dot(b)
-
-  projection: (a, b) ->
-    a.projection(b)
-
-  cross: (a, b) ->
-    a.cross(b)
+    new Vector(@for_each((x) -> x + c))
 
 root = exports ? this
 root.Vector = Vector
