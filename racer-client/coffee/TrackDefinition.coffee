@@ -21,6 +21,6 @@ class TrackDefinition
     [feature.dynamic_path(t) for feature in @features]
 
   obstacles: (scene_time, car, checkpoint_progress) ->
-    [feature.obstacle(time,car,check_point_progress) for feature in @features]
-    # TODO: fold right or
+    [feature.obstacle(time, car, check_point_progress) for feature in @features]
+# TODO: fold right or
 

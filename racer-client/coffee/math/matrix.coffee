@@ -30,13 +30,13 @@ class Matrix extends Countable
     @diagonal().sum()
 
   toString: ->
-    "[\n" + ("  [#{row.join(",")}]" for row in @values).join("\n") + "\n]"
+    "Matrix [\n" + ("  [#{row.join(",")}]" for row in @values).join("\n") + "\n]"
 
   length: -> @dim_n * @dim_m
 
   part: (i) ->
-    row = Math.floor(i / dim_m);
-    col = i % dim_m
+    row = Math.floor(i / @dim_m);
+    col = i % @dim_m
     @values[row][col]
 
   element: (row, column) ->
